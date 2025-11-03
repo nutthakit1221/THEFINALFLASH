@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Ready - About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">P <span>Profile Ready</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="login.html" class="btn-nav">Login</a>
+    </nav>
+  </header>
+
+  <main class="about-section">
+    <div class="about-box">
+      <h2>About Profile Ready</h2>
+      <p>
+        Profile Ready helps you create professional profile photos instantly. 
+        Whether you’re applying for jobs, updating LinkedIn, or creating ID photos,
+        we make it simple and beautiful.
+      </p>
+      <p>
+        Upload your photo, adjust settings, and download in multiple formats — 
+        all in just a few clicks.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Profile Ready. All rights reserved.</p>
+  </footer>
+
+  <script type="module">
+    import { initUploadPage, initSettingsPage, initResultPage, initDownloadPage, initAuthPages } from './app.js';
+    (void 0)?.();
+    initAuthPages();
+  </script>
+
+</body>
+</html>

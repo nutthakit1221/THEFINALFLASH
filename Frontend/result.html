@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Ready - Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">P <span>Profile Ready</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="btn-nav">Login</a>
+    </nav>
+  </header>
+
+  <main class="result-section">
+    <div class="result-box">
+      <h2>Original Result</h2>
+      <p>Your professional profile photo is ready!</p>
+  
+      <div class="result-image">
+        <img src="https://via.placeholder.com/300x300.png?text=Profile+Photo" alt="Result Photo">
+      </div>
+  
+      <div class="result-actions">
+        <a href="download.html" class="btn-primary">Download</a>
+        <a href="setting.html" class="btn-secondary">Back</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Profile Ready. All rights reserved.</p>
+  </footer>
+
+  <script type="module">
+    import { initUploadPage, initSettingsPage, initResultPage, initDownloadPage, initAuthPages } from './app.js';
+    (initResultPage)?.();
+    initAuthPages();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Ready - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">P <span>Profile Ready</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="btn-nav active">Login</a>
+    </nav>
+  </header>
+
+  <main class="login-section">
+    <div class="login-box">
+      <h2>Log in or Sign up</h2>
+      <p>to get your professional profile photo</p>
+
+      <form class="login-form">
+        <label for="email">E-mail address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="btn-primary">Continue</button>
+      </form>
+
+      <p class="signup-text">Don’t have an account? <a href="register.html">Sign up</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Profile Ready. All rights reserved.</p>
+  </footer>
+
+  <script type="module">
+    import { initUploadPage, initSettingsPage, initResultPage, initDownloadPage, initAuthPages } from './app.js';
+    (void 0)?.();
+    initAuthPages();
+  </script>
+
+</body>
+</html>

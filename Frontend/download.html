@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Ready - Download</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">P <span>Profile Ready</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="btn-nav">Login</a>
+    </nav>
+  </header>
+
+  <main class="download-section">
+    <div class="download-box">
+      <h2>Download Your Photo</h2>
+      <p>Select your preferred format below</p>
+
+      <div class="preview-box">
+        <img src="https://via.placeholder.com/250x250.png?text=Final+Photo" alt="Final Profile Photo">
+        <p>Your photo is ready 🎉</p>
+      </div>
+
+      <div class="download-options">
+        <a href="#" data-dl="png" class="btn-primary">.png</a>
+        <a href="#" data-dl="jpg" class="btn-primary">.jpg</a>
+        <a href="#" data-dl="pdf" class="btn-primary">.pdf</a>
+      </div>
+
+      <a href="result.html" class="back-btn">Back</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Profile Ready. All rights reserved.</p>
+  </footer>
+
+  <script type="module">
+    import { initUploadPage, initSettingsPage, initResultPage, initDownloadPage, initAuthPages } from './app.js';
+    (initDownloadPage)?.();
+    initAuthPages();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Ready - Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">P <span>Profile Ready</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="btn-nav">Login</a>
+    </nav>
+  </header>
+
+  <main class="login-section">
+    <div class="login-box">
+      <h2>Create Your Account</h2>
+      <p>to get started with Profile Ready</p>
+
+      <form class="login-form">
+        <label for="email">E-mail address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required>
+        
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+
+        <button type="submit" class="btn-primary">Sign Up</button>
+      </form>
+
+      <p class="signup-text">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Profile Ready. All rights reserved.</p>
+  </footer>
+
+  <script type="module">
+    import { initUploadPage, initSettingsPage, initResultPage, initDownloadPage, initAuthPages } from './app.js';
+    (void 0)?.();
+    initAuthPages();
+  </script>
+
+</body>
+</html>

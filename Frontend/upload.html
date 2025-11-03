@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Ready - Upload</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">P <span>Profile Ready</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="btn-nav">Login</a>
+    </nav>
+  </header>
+
+  <main class="upload-section">
+    <div class="upload-box">
+      <div id="uploadArea" class="upload-area" 
+           onclick="document.getElementById('fileInput').click();"
+           ondragover="event.preventDefault(); this.classList.add('dragging');"
+           ondragleave="this.classList.remove('dragging');"
+           ondrop="handleDrop(event)">
+        <div class="upload-icon">📁</div>
+        <h3>Upload Photo</h3>
+        <p>Drag & drop or click to choose a photo</p>
+        <input type="file" id="fileInput" accept="image/*" hidden onchange="previewFile(event)">
+      </div>
+
+      <div id="previewContainer" class="preview hidden">
+        <img id="previewImage" src="" alt="Preview">
+        <p id="fileName"></p>
+      </div>
+
+      <button id="nextBtn" class="btn-primary disabled"  disabled>
+        Next
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Profile Ready. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function previewFile(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById("previewImage").src = e.target.result;
+          document.getElementById("previewContainer").classList.remove("hidden");
+          document.getElementById("fileName").textContent = file.name;
+          activateNext();
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      const file = event.dataTransfer.files[0];
+      document.getElementById("fileInput").files = event.dataTransfer.files;
+      previewFile({ target: { files: [file] } });
+      event.currentTarget.classList.remove('dragging');
+    }
+
+    function activateNext() {
+      const btn = document.getElementById("nextBtn");
+      btn.disabled = false;
+      btn.classList.remove("disabled");
+    }
+
+    function goNext() {
+      window.location.href = "setting.html";
+    }
+  </script>
+
+  <script type="module">
+    import { initUploadPage, initSettingsPage, initResultPage, initDownloadPage, initAuthPages } from './app.js';
+    (initUploadPage)?.();
+    initAuthPages();
+  </script>
+
+</body>
+</html>
