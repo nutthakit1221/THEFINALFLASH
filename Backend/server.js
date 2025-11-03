@@ -15,6 +15,8 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 const { execFile } = require('child_process');
+
+const MAGICK_BIN = process.env.MAGICK_BIN || 'convert'; // use 'convert' on Linux (Render), 'magick' on Windows/IM7
 const crypto = require('crypto');
 
 // Attempt to load Firebase token verification if available. This is used for
@@ -87,7 +89,7 @@ app.use((req, res, next) => {
  */
 function runMagick(args) {
   return new Promise((resolve, reject) => {
-    execFile('magick', args, (error, stdout, stderr) => {
+    execFile(MAGICK_BIN, args, (error, stdout, stderr) => {
       if (error) {
         console.error('[Magick error]', stderr || error.message);
         return reject(error);
